@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Billing.Database\Billing.Database.csproj" />
+      <ProjectReference Include="..\Billing.Models\Billing.Models.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="App.config" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,13 @@
+C:\Users\Admin\RiderProjects\Billing\Billing.Service\bin\Debug\netcoreapp3.0\Billing.Service.deps.json
+C:\Users\Admin\RiderProjects\Billing\Billing.Service\bin\Debug\netcoreapp3.0\Billing.Service.dll
+C:\Users\Admin\RiderProjects\Billing\Billing.Service\bin\Debug\netcoreapp3.0\Billing.Service.pdb
+C:\Users\Admin\RiderProjects\Billing\Billing.Service\bin\Debug\netcoreapp3.0\Billing.Database.dll
+C:\Users\Admin\RiderProjects\Billing\Billing.Service\bin\Debug\netcoreapp3.0\Billing.Models.dll
+C:\Users\Admin\RiderProjects\Billing\Billing.Service\bin\Debug\netcoreapp3.0\Billing.Database.pdb
+C:\Users\Admin\RiderProjects\Billing\Billing.Service\bin\Debug\netcoreapp3.0\Billing.Models.pdb
+C:\Users\Admin\RiderProjects\Billing\Billing.Service\obj\Debug\netcoreapp3.0\Billing.Service.csprojAssemblyReference.cache
+C:\Users\Admin\RiderProjects\Billing\Billing.Service\obj\Debug\netcoreapp3.0\Billing.Service.AssemblyInfoInputs.cache
+C:\Users\Admin\RiderProjects\Billing\Billing.Service\obj\Debug\netcoreapp3.0\Billing.Service.AssemblyInfo.cs
+C:\Users\Admin\RiderProjects\Billing\Billing.Service\obj\Debug\netcoreapp3.0\Billing.Service.csproj.CopyComplete
+C:\Users\Admin\RiderProjects\Billing\Billing.Service\obj\Debug\netcoreapp3.0\Billing.Service.dll
+C:\Users\Admin\RiderProjects\Billing\Billing.Service\obj\Debug\netcoreapp3.0\Billing.Service.pdb
