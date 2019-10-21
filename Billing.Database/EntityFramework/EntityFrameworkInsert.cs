@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Billing.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Billing.Database.EntityFramework
 {

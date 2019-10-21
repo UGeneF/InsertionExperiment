@@ -53,6 +53,10 @@
               "target": "Package",
               "version": "[3.0.0, )"
             },
+            "Microsoft.Extensions.Logging.Console": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Npgsql": {
               "target": "Package",
               "version": "[4.1.1, )"

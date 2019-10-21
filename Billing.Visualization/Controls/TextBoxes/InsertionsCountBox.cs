@@ -13,7 +13,7 @@ namespace Billing.Visualization.Controls.TextBoxes
         private void InitializeComponent()
         {
             Location = new Point {X = 1000, Y = 350};
-            Text = "15";
+            Text = "10";
         }
         
         public int GetValue()

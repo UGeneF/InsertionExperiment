@@ -29,7 +29,7 @@ namespace Billing.Service.Experiment
         {
             for (int batchSize = _settings.StartBatch, i = 0;
                 i < _settings.InsertionsCount;
-                batchSize += _settings.BatchIncrement)
+                batchSize += _settings.BatchIncrement,i++)
             {
                 var calls = GenerateCalls(batchSize);
                 foreach (var insertionType in _settings.InsertionTypes)

@@ -19,8 +19,8 @@ namespace Billing.Visualization.Controls.Charts
 
         private void InitializeComponent()
         {
-            Location = new Point() {X = 10, Y = 10};
-            Size = new Size(950, 570);
+            Location = new Point() {X = 0, Y = 0};
+            Size = new Size(950, 600);
             ChartAreas.Add(new ChartArea());
             GenerateSeries();
             Legends.Add(EntityFrameworkSeries);
