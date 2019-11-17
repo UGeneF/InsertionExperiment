@@ -1,16 +1,17 @@
 ﻿using System.Threading.Tasks;
 using Billing.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace Billing.Database.EntityFramework
 {
-    public class EntityFrameworkInsert:IInsert
+    public class EntityFrameworkInsert : IInsert
     {
         public async Task InsertAsync(Call[] calls)
         {
-            using var context = new BillingContext();
-            context.Calls.AddRange(calls);
-            await context.SaveChangesAsync().ConfigureAwait(false);
+            using (var context = new BillingContext())
+            {
+                context.Calls.AddRange(calls);
+                await context.SaveChangesAsync().ConfigureAwait(false);
+            }
         }
     }
 }
