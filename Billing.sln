@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Billing.Database", "Billing
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Billing.Visualization", "Billing.Visualization\Billing.Visualization.csproj", "{ECA6A5A5-EFAB-4A63-A72D-A832362920B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostgresCopy", "PostgresCopy\PostgresCopy.csproj", "{4F3CDC1A-A61C-4D24-8D67-C27EACB827D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{ECA6A5A5-EFAB-4A63-A72D-A832362920B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECA6A5A5-EFAB-4A63-A72D-A832362920B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECA6A5A5-EFAB-4A63-A72D-A832362920B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F3CDC1A-A61C-4D24-8D67-C27EACB827D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F3CDC1A-A61C-4D24-8D67-C27EACB827D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F3CDC1A-A61C-4D24-8D67-C27EACB827D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F3CDC1A-A61C-4D24-8D67-C27EACB827D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

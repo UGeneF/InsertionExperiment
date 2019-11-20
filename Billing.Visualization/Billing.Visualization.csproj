@@ -13,6 +13,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Billing.Service\Billing.Service.csproj" />
+      <ProjectReference Include="..\PostgresCopy\PostgresCopy.csproj" />
     </ItemGroup>
 
     <ItemGroup>

@@ -1,0 +1,8 @@
+C:\Users\Admin\RiderProjects\Billing\PostgresCopy\bin\Debug\netcoreapp3.0\PostgresCopy.deps.json
+C:\Users\Admin\RiderProjects\Billing\PostgresCopy\bin\Debug\netcoreapp3.0\PostgresCopy.dll
+C:\Users\Admin\RiderProjects\Billing\PostgresCopy\bin\Debug\netcoreapp3.0\PostgresCopy.pdb
+C:\Users\Admin\RiderProjects\Billing\PostgresCopy\obj\Debug\netcoreapp3.0\PostgresCopy.csprojAssemblyReference.cache
+C:\Users\Admin\RiderProjects\Billing\PostgresCopy\obj\Debug\netcoreapp3.0\PostgresCopy.AssemblyInfoInputs.cache
+C:\Users\Admin\RiderProjects\Billing\PostgresCopy\obj\Debug\netcoreapp3.0\PostgresCopy.AssemblyInfo.cs
+C:\Users\Admin\RiderProjects\Billing\PostgresCopy\obj\Debug\netcoreapp3.0\PostgresCopy.dll
+C:\Users\Admin\RiderProjects\Billing\PostgresCopy\obj\Debug\netcoreapp3.0\PostgresCopy.pdb

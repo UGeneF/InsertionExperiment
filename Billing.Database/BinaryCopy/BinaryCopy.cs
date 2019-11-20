@@ -9,7 +9,6 @@ namespace Billing.Database.BinaryCopy
 {
     public class BinaryInsert : IInsert
     {
-       
         public async Task InsertAsync(Call[] calls)
         {
             using var conn = new NpgsqlConnection(DbCredentials.ConnectionString);
@@ -19,7 +18,7 @@ namespace Billing.Database.BinaryCopy
                 "(start_time,end_time,calling_number," +
                 "called_number,duration,call_type,call_id) " +
                 "FROM STDIN (FORMAT BINARY)");
-            
+
             foreach (var call in calls)
             {
                 writer.StartRow();
@@ -31,8 +30,9 @@ namespace Billing.Database.BinaryCopy
                 writer.Write(call.CallType);
                 writer.Write(call.CallId, NpgsqlDbType.Varchar);
             }
+
             await writer.CompleteAsync().ConfigureAwait(false);
-            
         }
+
     }
 }

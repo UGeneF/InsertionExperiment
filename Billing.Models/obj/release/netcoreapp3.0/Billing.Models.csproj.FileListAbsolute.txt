@@ -1,0 +1,8 @@
+C:\Users\Admin\RiderProjects\Billing\Billing.Models\bin\release\netcoreapp3.0\Billing.Models.deps.json
+C:\Users\Admin\RiderProjects\Billing\Billing.Models\bin\release\netcoreapp3.0\Billing.Models.dll
+C:\Users\Admin\RiderProjects\Billing\Billing.Models\bin\release\netcoreapp3.0\Billing.Models.pdb
+C:\Users\Admin\RiderProjects\Billing\Billing.Models\obj\release\netcoreapp3.0\Billing.Models.csprojAssemblyReference.cache
+C:\Users\Admin\RiderProjects\Billing\Billing.Models\obj\release\netcoreapp3.0\Billing.Models.AssemblyInfoInputs.cache
+C:\Users\Admin\RiderProjects\Billing\Billing.Models\obj\release\netcoreapp3.0\Billing.Models.AssemblyInfo.cs
+C:\Users\Admin\RiderProjects\Billing\Billing.Models\obj\release\netcoreapp3.0\Billing.Models.dll
+C:\Users\Admin\RiderProjects\Billing\Billing.Models\obj\release\netcoreapp3.0\Billing.Models.pdb

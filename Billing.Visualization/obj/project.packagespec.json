@@ -21,6 +21,9 @@
         "projectReferences": {
           "C:\\Users\\Admin\\RiderProjects\\Billing\\Billing.Service\\Billing.Service.csproj": {
             "projectPath": "C:\\Users\\Admin\\RiderProjects\\Billing\\Billing.Service\\Billing.Service.csproj"
+          },
+          "C:\\Users\\Admin\\RiderProjects\\Billing\\PostgresCopy\\PostgresCopy.csproj": {
+            "projectPath": "C:\\Users\\Admin\\RiderProjects\\Billing\\PostgresCopy\\PostgresCopy.csproj"
           }
         }
       }

@@ -216,6 +216,9 @@
             "projectReferences": {
               "C:\\Users\\Admin\\RiderProjects\\Billing\\Billing.Service\\Billing.Service.csproj": {
                 "projectPath": "C:\\Users\\Admin\\RiderProjects\\Billing\\Billing.Service\\Billing.Service.csproj"
+              },
+              "C:\\Users\\Admin\\RiderProjects\\Billing\\PostgresCopy\\PostgresCopy.csproj": {
+                "projectPath": "C:\\Users\\Admin\\RiderProjects\\Billing\\PostgresCopy\\PostgresCopy.csproj"
               }
             }
           }
@@ -236,6 +239,65 @@
             "System.Windows.Forms.DataVisualization": {
               "target": "Package",
               "version": "[1.0.0-prerelease.19218.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\Admin\\RiderProjects\\Billing\\PostgresCopy\\PostgresCopy.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\RiderProjects\\Billing\\PostgresCopy\\PostgresCopy.csproj",
+        "projectName": "PostgresCopy",
+        "projectPath": "C:\\Users\\Admin\\RiderProjects\\Billing\\PostgresCopy\\PostgresCopy.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\RiderProjects\\Billing\\PostgresCopy\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "GrEmit": {
+              "target": "Package",
+              "version": "[3.2.1, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[4.1.1, )"
             }
           },
           "imports": [

@@ -5,7 +5,7 @@ using Billing.Models;
 
 namespace Billing.Service.Experiment
 {
-    class CallGenerator
+    public class CallGenerator
     {
         public Call[] GetCalls(int count)
         {

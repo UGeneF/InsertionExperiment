@@ -1,0 +1,68 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "PostgresCopy/1.0.0": {
+        "dependencies": {
+          "GrEmit": "3.2.1",
+          "Npgsql": "4.1.1"
+        },
+        "runtime": {
+          "PostgresCopy.dll": {}
+        }
+      },
+      "GrEmit/3.2.1": {
+        "runtime": {
+          "lib/netcoreapp2.2/GrEmit.dll": {
+            "assemblyVersion": "3.2.1.0",
+            "fileVersion": "3.2.1.48183"
+          }
+        }
+      },
+      "Npgsql/4.1.1": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Npgsql.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.1.1.0"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.6.0": {}
+    }
+  },
+  "libraries": {
+    "PostgresCopy/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GrEmit/3.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fLed1iFTcFGMeP+wOysRgrPoCjcke05o/WDdzuKvi17m1Wpgz48iRRbzvjHrX+or2Qgtqkw1/+waYXskPNvc4A==",
+      "path": "gremit/3.2.1",
+      "hashPath": "gremit.3.2.1.nupkg.sha512"
+    },
+    "Npgsql/4.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VvYSduwCVCy1erIntV3jVbBduAL8+hqobg8xf5xPmkqzGJ5j9Wx4y/eXz2+BLmFkozJEjTzxz8/X5cOyJ4P9Ig==",
+      "path": "npgsql/4.1.1",
+      "hashPath": "npgsql.4.1.1.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HxozeSlipUK7dAroTYwIcGwKDeOVpQnJlpVaOkBz7CM4TsE5b/tKlQBZecTjh6FzcSbxndYaxxpsBMz+wMJeyw==",
+      "path": "system.runtime.compilerservices.unsafe/4.6.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
+    }
+  }
+}

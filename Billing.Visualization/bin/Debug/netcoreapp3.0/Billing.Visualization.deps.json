@@ -9,6 +9,7 @@
       "Billing.Visualization/1.0.0": {
         "dependencies": {
           "Billing.Service": "1.0.0",
+          "PostgresCopy": "1.0.0",
           "System.Data.SqlClient": "4.7.0",
           "System.Windows.Forms.DataVisualization": "1.0.0-prerelease.19218.1"
         },
@@ -26,6 +27,14 @@
           "lib/netstandard2.1/EFCore.NamingConventions.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "GrEmit/3.2.1": {
+        "runtime": {
+          "lib/netcoreapp2.2/GrEmit.dll": {
+            "assemblyVersion": "3.2.1.0",
+            "fileVersion": "3.2.1.48183"
           }
         }
       },
@@ -395,6 +404,15 @@
         "runtime": {
           "Billing.Service.dll": {}
         }
+      },
+      "PostgresCopy/1.0.0": {
+        "dependencies": {
+          "GrEmit": "3.2.1",
+          "Npgsql": "4.1.1"
+        },
+        "runtime": {
+          "PostgresCopy.dll": {}
+        }
       }
     }
   },
@@ -410,6 +428,13 @@
       "sha512": "sha512-lHwTbikKqsSqdcT82ZWgcp+t1CIgsFoq2SJKPDx0VNPfrXDniDRWo3l6mo3IgYGA+6Z6KUxpvWQNRHaNoifGSw==",
       "path": "efcore.namingconventions/1.0.0",
       "hashPath": "efcore.namingconventions.1.0.0.nupkg.sha512"
+    },
+    "GrEmit/3.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fLed1iFTcFGMeP+wOysRgrPoCjcke05o/WDdzuKvi17m1Wpgz48iRRbzvjHrX+or2Qgtqkw1/+waYXskPNvc4A==",
+      "path": "gremit/3.2.1",
+      "hashPath": "gremit.3.2.1.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore/3.0.0": {
       "type": "package",
@@ -709,6 +734,11 @@
       "sha512": ""
     },
     "Billing.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PostgresCopy/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
