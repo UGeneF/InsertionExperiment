@@ -3,7 +3,7 @@ using Npgsql;
 
 namespace PostgresCopy
 {
-    public interface IWriteDelegateFactory
+    public interface IDelegateFactory
     {
         Action<NpgsqlBinaryImporter, T> GetDelegate<T>();
     }

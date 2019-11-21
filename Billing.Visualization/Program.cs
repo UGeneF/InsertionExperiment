@@ -8,6 +8,8 @@ using Billing.Models;
 using Billing.Service.Experiment;
 using Billing.Visualization.Controls;
 using Npgsql;
+using NpgsqlTypes;
+using PostgresCopy;
 
 namespace Billing.Visualization
 {
@@ -23,11 +25,21 @@ namespace Billing.Visualization
             NpgsqlConnection.GlobalTypeMapper.MapEnum<CallType>("call_type_enum");
 
             var get = new CallGenerator();
-            var copy = new PostgresCopy.PostgresCopy();
-            var calls = get.GetCalls(100);
-           await copy.InsertAsync(calls,"Server=localhost;Port=5432;Database=billing;User ID=postgres;Password=11111111");
+            var copy = new Copy();
+            var calls = get.GetCalls(10);
+
+
+            CopyConfig.ConnectionString = 
+                "Server=localhost;Port=5432;Database=billing;User ID=postgres;Password=11111111";
             
-            
+            CopyTypeMapper
+                .MapType(typeof(Call))
+                .MapProperty(nameof(Call.Duration), NpgsqlDbType.Integer)
+                .MapProperty(nameof(Call.EndTime), NpgsqlDbType.Timestamp);
+
+            await copy.InsertAsync(calls).ConfigureAwait(false);
+
+
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

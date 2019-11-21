@@ -9,7 +9,7 @@ using NpgsqlTypes;
 
 namespace PostgresCopy
 {
-    public class WriteDelegateFactory : IWriteDelegateFactory
+    public class DelegateFactory : IDelegateFactory
     {
         private readonly ConcurrentDictionary<Type, object> _delegates =
             new ConcurrentDictionary<Type, object>();
@@ -29,7 +29,8 @@ namespace PostgresCopy
             using (var il = new GroboIL(dynamicMethod))
             {
                 il.Ldarg(0);
-                il.Callnonvirt(typeof(NpgsqlBinaryImporter).GetMethod("StartRow",BindingFlags.Instance|BindingFlags.Public));
+                il.Callnonvirt(typeof(NpgsqlBinaryImporter).GetMethod("StartRow",
+                    BindingFlags.Instance | BindingFlags.Public));
                 foreach (var prop in props)
                 {
                     il.Ldarg(0);
@@ -39,6 +40,7 @@ namespace PostgresCopy
                         il.Ldc_I4((int) prop.PostgresType.Value);
                     il.Callnonvirt(prop.WriteMethod);
                 }
+
                 il.Ret();
             }
 
@@ -48,10 +50,11 @@ namespace PostgresCopy
 
         private PropInfo[] ExtractInfo<T>()
         {
-            var props = typeof(T).GetProperties(BindingFlags.Instance | BindingFlags.Public);
+            var type = typeof(T);
+            var props = type.GetProperties(BindingFlags.Instance | BindingFlags.Public);
             return props.Select(p =>
                 {
-                    var dbType = GetDbType(p.PropertyType);
+                    var dbType = GetDbType(p);
                     return new PropInfo
                     {
                         Getter = p.GetMethod,
@@ -62,28 +65,35 @@ namespace PostgresCopy
                 .ToArray();
         }
 
-        private NpgsqlDbType? GetDbType(object clrType)
+        private NpgsqlDbType? GetDbType(PropertyInfo propertyInfo)
         {
-            switch (clrType)
-            {
-                case string _:
-                    return NpgsqlDbType.Varchar;
-                case int _:
-                    return NpgsqlDbType.Integer;
-                case DateTime _:
-                    return NpgsqlDbType.Timestamp;
-                default:
-                    return null;
-            }
+            return CopyTypeMapper.GetDbType(propertyInfo.DeclaringType, propertyInfo.Name);
         }
 
         private MethodInfo GetMatchedGenericMethod(Type paramType, NpgsqlDbType? dbType)
         {
             var paramTypes = dbType == null ? new[] {paramType} : new[] {paramType, typeof(NpgsqlDbType)};
+            if (paramType.IsClass)
+            {
+                return typeof(DelegateFactory)
+                    .GetMethods(BindingFlags.Static|BindingFlags.NonPublic)
+                    .First(m => m.Name == nameof(WriteRefType) && m.GetParameters().Length == paramTypes.Length+1)
+                    .MakeGenericMethod(paramTypes);
+            }
+
+            if (Nullable.GetUnderlyingType(paramType) != null)
+            {
+                return typeof(DelegateFactory)
+                    .GetMethods(BindingFlags.Static|BindingFlags.NonPublic)
+                    .First(m => m.Name == nameof(WriteNullableStruct) && m.GetParameters().Length == paramTypes.Length+1)
+                    .MakeGenericMethod(paramTypes);
+            }
+
             return typeof(NpgsqlBinaryImporter)
                 .GetMethods()
                 .Where(m => m.Name == "Write")
-                .Select(m => new {
+                .Select(m => new
+                {
                     Method = m,
                     Params = m.GetParameters(),
                     Args = m.GetGenericArguments()
@@ -91,8 +101,44 @@ namespace PostgresCopy
                 .Where(x => x.Params.Length == paramTypes.Length
                             && x.Args.Length == 1
                             && x.Params[0].ParameterType == x.Args[0])
-                .Select(x => x.Method.MakeGenericMethod(paramTypes))
+                .Select(x => x.Method.MakeGenericMethod(paramTypes[0]))
                 .First();
+        }
+
+        private static void WriteRefType<T>(NpgsqlBinaryImporter writer, T value)
+            where T : class
+        {
+            if (value == null)
+                writer.WriteNull();
+            else
+                writer.Write(value);
+        }
+
+        private static void WriteRefType<T>(NpgsqlBinaryImporter writer, T value, NpgsqlDbType dbType)
+            where T : class
+        {
+            if (value == null)
+                writer.WriteNull();
+            else
+                writer.Write(value, dbType);
+        }
+
+        private static void WriteNullableStruct<T>(NpgsqlBinaryImporter writer, T? value)
+            where T : struct
+        {
+            if (value == null)
+                writer.WriteNull();
+            else
+                writer.Write(value.Value);
+        }
+
+        private static void WriteNullableStruct<T>(NpgsqlBinaryImporter writer, T? value, NpgsqlDbType dbType)
+            where T : struct
+        {
+            if (value == null)
+                writer.WriteNull();
+            else
+                writer.Write(value.Value, dbType);
         }
 
         private class PropInfo

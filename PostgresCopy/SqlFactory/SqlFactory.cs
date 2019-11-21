@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace PostgresCopy
 {
-    public class SqlCommandFactory : ISqlCommandFactory
+    public class SqlFactory : ISqlFactory
     {
         private readonly Regex _wordInCamelCase = new Regex(@"([A-Z][a-z]*)", RegexOptions.Compiled);
 

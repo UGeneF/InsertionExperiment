@@ -1,6 +1,6 @@
 ﻿namespace PostgresCopy
 {
-    public interface ISqlCommandFactory
+    public interface ISqlFactory
     {
         string GetSql<T>();
     }
