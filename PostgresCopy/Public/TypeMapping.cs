@@ -17,7 +17,7 @@ namespace PostgresCopy
             return this;
         }
 
-        public NpgsqlDbType? GetDbType(string propertyName)
+        internal NpgsqlDbType? GetDbType(string propertyName)
         {
             _propertyMappings.TryGetValue(propertyName, out var dbType);
             if (dbType == default)

@@ -8,7 +8,7 @@ using Microsoft.Extensions.Options;
 
 namespace Billing.Database.EntityFramework
 {
-    internal class BillingContext : DbContext
+    public class BillingContext : DbContext
     {
         public DbSet<Call> Calls { get; set; }
         

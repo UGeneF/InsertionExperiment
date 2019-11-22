@@ -6,7 +6,7 @@ namespace PostgresCopy
 {
     public static class CopyTypeMapper
     {
-        private static Dictionary<Type, TypeMapping> _mappings
+        private static readonly Dictionary<Type, TypeMapping> _mappings
             = new Dictionary<Type, TypeMapping>();
 
         public static TypeMapping MapType(Type type)
@@ -17,7 +17,7 @@ namespace PostgresCopy
             return _mappings[type];
         }
 
-        public static NpgsqlDbType? GetDbType(Type type, string propertyName)
+        internal static NpgsqlDbType? GetDbType(Type type, string propertyName)
         {
             _mappings.TryGetValue(type, out var typeMapping);
             return typeMapping?.GetDbType(propertyName);

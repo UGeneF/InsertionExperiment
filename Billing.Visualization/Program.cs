@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Billing.Database.EntityFramework;
 using Billing.Models;
 using Billing.Service.Experiment;
 using Billing.Visualization.Controls;
@@ -25,19 +26,16 @@ namespace Billing.Visualization
             NpgsqlConnection.GlobalTypeMapper.MapEnum<CallType>("call_type_enum");
 
             var get = new CallGenerator();
-            var copy = new Copy();
             var calls = get.GetCalls(10);
-
-
-            CopyConfig.ConnectionString = 
-                "Server=localhost;Port=5432;Database=billing;User ID=postgres;Password=11111111";
+            
             
             CopyTypeMapper
                 .MapType(typeof(Call))
                 .MapProperty(nameof(Call.Duration), NpgsqlDbType.Integer)
                 .MapProperty(nameof(Call.EndTime), NpgsqlDbType.Timestamp);
 
-            await copy.InsertAsync(calls).ConfigureAwait(false);
+            var context = new BillingContext();
+            await context.BulkCopyAsync(calls).ConfigureAwait(false);
 
 
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
