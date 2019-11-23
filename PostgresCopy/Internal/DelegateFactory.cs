@@ -44,7 +44,7 @@ namespace PostgresCopy
 
                 il.Ret();
             }
-
+            
             return dynamicMethod.CreateDelegate(typeof(Action<NpgsqlBinaryImporter, T>));
         }
 
