@@ -25,19 +25,6 @@ namespace Billing.Visualization
             NpgsqlConnection.GlobalTypeMapper.MapComposite<Call>("call_ct");
             NpgsqlConnection.GlobalTypeMapper.MapEnum<CallType>("call_type_enum");
 
-            var get = new CallGenerator();
-            var calls = get.GetCalls(10);
-            
-            
-            CopyTypeMapper
-                .MapType(typeof(Call))
-                .MapProperty(nameof(Call.Duration), NpgsqlDbType.Integer)
-                .MapProperty(nameof(Call.EndTime), NpgsqlDbType.Timestamp);
-
-            var context = new BillingContext();
-            await context.BulkCopyAsync(calls).ConfigureAwait(false);
-
-
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
