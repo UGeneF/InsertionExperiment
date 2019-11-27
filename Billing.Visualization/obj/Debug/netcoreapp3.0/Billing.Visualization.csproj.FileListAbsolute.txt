@@ -48,5 +48,4 @@ C:\Users\Admin\RiderProjects\Billing\Billing.Visualization\bin\Debug\netcoreapp3
 C:\Users\Admin\RiderProjects\Billing\Billing.Visualization\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Logging.Console.dll
 C:\Users\Admin\RiderProjects\Billing\Billing.Visualization\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\Admin\RiderProjects\Billing\Billing.Visualization\bin\Debug\netcoreapp3.0\GrEmit.dll
-C:\Users\Admin\RiderProjects\Billing\Billing.Visualization\bin\Debug\netcoreapp3.0\PostgresCopy.dll
-C:\Users\Admin\RiderProjects\Billing\Billing.Visualization\bin\Debug\netcoreapp3.0\PostgresCopy.pdb
+C:\Users\Admin\RiderProjects\Billing\Billing.Visualization\bin\Debug\netcoreapp3.0\Copy.dll

@@ -1,16 +1,10 @@
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Billing.Database.EntityFramework;
 using Billing.Models;
-using Billing.Service.Experiment;
-using Billing.Visualization.Controls;
+using Copy;
 using Npgsql;
-using NpgsqlTypes;
-using PostgresCopy;
 
 namespace Billing.Visualization
 {
@@ -25,6 +19,8 @@ namespace Billing.Visualization
             NpgsqlConnection.GlobalTypeMapper.MapComposite<Call>("call_ct");
             NpgsqlConnection.GlobalTypeMapper.MapEnum<CallType>("call_type_enum");
 
+            var context = new BillingContext();
+            await context.BulkCopyAsync(new[] {new Call()});
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
